@@ -1,4 +1,4 @@
-package com.otienosamwel.bottom_nav.ui.presentation
+package com.otienosamwel.bottom_nav.ui.presentation.features
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,8 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun Home() {
+fun Feed() {
     Column(modifier = Modifier.fillMaxSize()) {
-        Text(text = "Testing module", style = MaterialTheme.typography.h1)
+        Text(text = "Feed", style = MaterialTheme.typography.h2)
     }
 }

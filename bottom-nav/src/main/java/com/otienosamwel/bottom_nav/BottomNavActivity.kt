@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import com.otienosamwel.bottom_nav.ui.presentation.Home
+import com.otienosamwel.bottom_nav.ui.presentation.Navigation
 import com.otienosamwel.bottom_nav.ui.theme.ComposedoodlesTheme
 
 class BottomNavActivity : ComponentActivity() {
@@ -19,7 +19,7 @@ class BottomNavActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Home()
+                    Navigation()
                 }
             }
         }
