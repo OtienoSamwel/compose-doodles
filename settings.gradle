@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "compose-doodles"
 include ':app'
+include ':bottom-nav'
