@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/bottom-nav" />
+            <option value="$PROJECT_DIR$/maps-compose" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

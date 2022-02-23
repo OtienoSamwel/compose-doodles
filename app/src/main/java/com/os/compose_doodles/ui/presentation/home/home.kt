@@ -32,13 +32,19 @@ fun Home() {
     ) {
         DoodleCard(
             name = "Bottom Navigation",
-            description = stringResource(R.string.bottom_nav_description)
+            description = stringResource(R.string.bottom_nav_description),
+            className = "com.otienosamwel.bottom_nav.BottomNavActivity"
+        )
+        DoodleCard(
+            name = "Google Maps With Compose",
+            description = stringResource(R.string.google_maps_description),
+            className = "com.otienosamwel.maps_compose.MapsActivity"
         )
     }
 }
 
 @Composable
-fun DoodleCard(name: String, description: String) {
+fun DoodleCard(name: String, description: String, className: String) {
     val context = LocalContext.current
     var expanded by remember { mutableStateOf(false) }
     Card(
@@ -46,11 +52,12 @@ fun DoodleCard(name: String, description: String) {
         elevation = 0.dp,
         border = BorderStroke(0.5.dp, color = MaterialTheme.colors.primary),
         modifier = Modifier
+            .padding(vertical = 8.dp)
             .fillMaxWidth()
             .clickable { expanded = !expanded }
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text(text = name, style = MaterialTheme.typography.h4)
+            Text(text = name, style = MaterialTheme.typography.h5)
             AnimatedVisibility(visible = expanded) {
                 Column(
                     verticalArrangement = Arrangement.Center,
@@ -61,7 +68,7 @@ fun DoodleCard(name: String, description: String) {
                         context.startActivity(
                             Intent(
                                 context,
-                                Class.forName("com.otienosamwel.bottom_nav.BottomNavActivity")
+                                Class.forName(className)
                             )
                         )
                     }) {
@@ -76,5 +83,9 @@ fun DoodleCard(name: String, description: String) {
 @Preview(showBackground = true)
 @Composable
 fun DoodleCardPreview() {
-    DoodleCard(name = "Preview name", description = "Test description for the card view")
+    DoodleCard(
+        name = "Preview name",
+        description = "Test description for the card view",
+        className = ""
+    )
 }

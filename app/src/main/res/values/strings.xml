@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">compose-doodles</string>
     <string name="bottom_nav_description">A bottom navigation layout in compose using a scaffold and compose navigation to manage navigation state</string>
+    <string name="google_maps_description">Google released a google maps view for compose. Just testing it out to see the useful features</string>
 </resources>
