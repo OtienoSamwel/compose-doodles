@@ -1,2 +1,2 @@
 # compose-doodles
-##Practice for various compose components
+## In this repo I try to work with various compose ui components.
