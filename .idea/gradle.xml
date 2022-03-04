@@ -13,9 +13,9 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/bottom-nav" />
             <option value="$PROJECT_DIR$/maps-compose" />
+            <option value="$PROJECT_DIR$/nav-rail" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

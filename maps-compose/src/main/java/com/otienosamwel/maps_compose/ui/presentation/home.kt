@@ -27,7 +27,10 @@ fun Home() {
                 Marker(
                     position = it,
                     markerDragState = markerDragState,
-                    draggable = true
+                )
+
+                Marker(
+                    position =cameraPositionState.position.target,
                 )
 
                 when (markerDragState.dragState) {

@@ -9,3 +9,4 @@ rootProject.name = "compose-doodles"
 include ':app'
 include ':bottom-nav'
 include ':maps-compose'
+include ':nav-rail'

@@ -40,6 +40,11 @@ fun Home() {
             description = stringResource(R.string.google_maps_description),
             className = "com.otienosamwel.maps_compose.MapsActivity"
         )
+        DoodleCard(
+            name ="Navigation Rail Compose",
+            description = "An implementation of the navigation rail with jetpack compose and material ui 3",
+            className = "com.otienosamwel.nav_rail.NavRailActivity"
+        )
     }
 }
 

@@ -1,7 +1,5 @@
-package com.os.compose_doodles
+package com.otienosamwel.nav_rail
 
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -16,10 +14,4 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
     }
-
-    @Test
-    fun `testing that assertj works`() = runBlocking {
-        assertEquals(2, 2)
-    }
-
 }
