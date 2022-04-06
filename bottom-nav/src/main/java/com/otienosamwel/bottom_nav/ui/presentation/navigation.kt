@@ -2,17 +2,15 @@ package com.otienosamwel.bottom_nav.ui.presentation
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.AccountCircle
 import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.material.icons.rounded.Home
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -24,6 +22,7 @@ import com.otienosamwel.bottom_nav.ui.presentation.features.Account
 import com.otienosamwel.bottom_nav.ui.presentation.features.Feed
 import com.otienosamwel.bottom_nav.ui.presentation.features.Home
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
@@ -44,15 +43,13 @@ fun BottomNavigationBar(navController: NavController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    BottomNavigation(
-        modifier = Modifier
-            .fillMaxWidth()
-    ) {
+
+    NavigationBar(modifier = Modifier.fillMaxWidth()) {
         myScreens.forEach { screen ->
-            BottomNavigationItem(
+            NavigationBarItem(
                 selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
                 icon = { Icon(imageVector = screen.Icon, contentDescription = screen.name) },
-                label = { Text(text = screen.name, modifier = Modifier.padding(vertical = 8.dp)) },
+                label = { Text(text = screen.name) },
                 alwaysShowLabel = true,
                 onClick = {
                     navController.navigate(screen.route) {

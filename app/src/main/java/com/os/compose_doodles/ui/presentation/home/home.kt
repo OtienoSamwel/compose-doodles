@@ -19,10 +19,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.os.compose_doodles.R
 
 @Composable
-fun Home() {
+fun Home(navController: NavController) {
     val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
@@ -41,15 +42,35 @@ fun Home() {
             className = "com.otienosamwel.maps_compose.MapsActivity"
         )
         DoodleCard(
-            name ="Navigation Rail Compose",
+            name = "Navigation Rail Compose",
             description = "An implementation of the navigation rail with jetpack compose and material ui 3",
-            className = "com.otienosamwel.nav_rail.NavRailActivity"
+            className = "com.otienosamwel.nav_rail.NavRailActivity",
         )
+        DoodleCard(
+            name = "Select Chips",
+            description = "An implementation of select chips with compose.",
+            destination = "selectChips",
+            navController = navController
+        )
+
+        DoodleCard(
+            name = "AutoComplete TextView",
+            description = "An autocomplete text view with suggestions implemented in jetpack compose.",
+            destination = "autoCompleteScreen",
+            navController = navController
+        )
+
     }
 }
 
 @Composable
-fun DoodleCard(name: String, description: String, className: String) {
+fun DoodleCard(
+    name: String,
+    description: String,
+    className: String? = null,
+    destination: String? = null,
+    navController: NavController? = null
+) {
     val context = LocalContext.current
     var expanded by remember { mutableStateOf(false) }
     Card(
@@ -70,12 +91,8 @@ fun DoodleCard(name: String, description: String, className: String) {
                 ) {
                     Text(text = description)
                     TextButton(onClick = {
-                        context.startActivity(
-                            Intent(
-                                context,
-                                Class.forName(className)
-                            )
-                        )
+                        className?.let { context.startActivity(Intent(context, Class.forName(it))) }
+                        destination?.let { navController?.navigate(it) }
                     }) {
                         Text(text = "Go")
                     }
