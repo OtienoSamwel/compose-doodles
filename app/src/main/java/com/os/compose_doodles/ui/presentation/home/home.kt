@@ -17,7 +17,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.os.compose_doodles.R
@@ -60,6 +59,14 @@ fun Home(navController: NavController) {
             navController = navController
         )
 
+        DoodleCard(
+            name = "Pagination in compose",
+            description = "A simple pagination implementation",
+            destination = "pagination",
+            navController = navController
+        )
+
+
     }
 }
 
@@ -100,14 +107,4 @@ fun DoodleCard(
             }
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DoodleCardPreview() {
-    DoodleCard(
-        name = "Preview name",
-        description = "Test description for the card view",
-        className = ""
-    )
 }

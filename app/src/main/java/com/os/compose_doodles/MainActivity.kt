@@ -11,6 +11,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.os.compose_doodles.ui.presentation.autocompleteTextView.AutoCompleteTextScreen
 import com.os.compose_doodles.ui.presentation.home.Home
+import com.os.compose_doodles.ui.presentation.paging.PagingContent
 import com.os.compose_doodles.ui.presentation.selectChip.SelectChips
 import com.os.compose_doodles.ui.theme.ComposedoodlesTheme
 
@@ -34,5 +35,6 @@ fun Navigation() {
         composable("home") { Home(navController = navController) }
         composable("selectChips") { SelectChips() }
         composable("autoCompleteScreen") { AutoCompleteTextScreen() }
+        composable("pagination"){ PagingContent()}
     }
 }
